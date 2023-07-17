@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show GIF and Play MP3</title>
+</head>
+<body style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; font-family: Arial, sans-serif;">
+    <h1>You have fallen for the chip trap, give this file to someone to totally chip trap them!</h1>
+    <img src="chip.gif" alt="GIF" style="max-width: 80%; max-height: 80%;" />
+    <audio id="audio" controls autoplay muted>
+        <source src="funne.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Unmute the audio when the user interacts with the document
+        document.addEventListener('click', function() {
+            const audio = document.getElementById('audio');
+            audio.muted = false;
+            audio.play();
+        });
+    </script>
+</body>
+</html>
