@@ -5,6 +5,9 @@
 </head>
 <body style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; font-family: Arial, sans-serif;">
     <button onclick="playAudioAndShowGif()">Play Audio and Show GIF</button>
+    <div id="chipText" style="display: none;">
+        <h1>You have fallen for the chip trap, give this file to someone to totally chip trap them!</h1>
+    </div>
     <img id="chipGif" src="chip.gif" alt="GIF" style="display: none; max-width: 80%; max-height: 80%;" />
     <audio id="audio" controls muted style="display: none;">
         <source src="funne.mp3" type="audio/mpeg">
@@ -15,16 +18,20 @@
         function playAudioAndShowGif() {
             const audio = document.getElementById('audio');
             const chipGif = document.getElementById('chipGif');
+            const chipText = document.getElementById('chipText');
             
             if (audio.paused) {
                 audio.muted = false;
                 audio.play();
                 chipGif.style.display = 'block';
+                chipText.style.display = 'block';
             } else {
                 audio.pause();
                 chipGif.style.display = 'none';
+                chipText.style.display = 'none';
             }
         }
     </script>
 </body>
 </html>
+
